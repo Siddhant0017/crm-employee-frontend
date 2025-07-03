@@ -51,7 +51,7 @@ const MyLeads = () => {
       if (typeFilter !== 'all') params.append('type', typeFilter);
 
       const res = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/leads/employee/${employeeId}?${params}`
+        `${process.env.REACT_APP_API_BASE_URL}/api/leads/employee/${employeeId}?${params}`
       );
       const data = await res.json();
       setLeads(data);
@@ -68,7 +68,7 @@ const MyLeads = () => {
   const updateLead = async (id, updateData) => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/leads/${id}/status`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/leads/${id}/status`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },

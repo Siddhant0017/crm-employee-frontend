@@ -42,7 +42,7 @@ const Profile = () => {
 
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/employees/${employee._id}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/employees/${employee._id}`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },

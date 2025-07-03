@@ -14,7 +14,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${API_BASE}/employee/login`, {
+      const response = await fetch(`${API_BASE}/api/employee/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -36,7 +36,7 @@ const LoginPage = () => {
       localStorage.setItem('employee', JSON.stringify(employeeData));
 
       // Check-In API Trigger Here
-      await fetch(`${API_BASE}/attendance/check-in`, {
+      await fetch(`${API_BASE}/api/attendance/check-in`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ employeeId: data.employee.id }),

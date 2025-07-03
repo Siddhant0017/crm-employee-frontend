@@ -25,7 +25,7 @@ function App() {
     }
 
     const sendHeartbeat = () => {
-      fetch(`${API_BASE}/attendance/heartbeat`, {
+      fetch(`${API_BASE}/api/attendance/heartbeat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ employeeId }),

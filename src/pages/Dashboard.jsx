@@ -37,7 +37,7 @@ const Dashboard = () => {
   const fetchAttendanceLogs = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/attendance/log/${employeeId}`);
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/attendance/log/${employeeId}`);
       const data = await res.json();
       setAttendanceLogs(Array.isArray(data) ? data : []);
     } catch {
@@ -50,7 +50,7 @@ const Dashboard = () => {
   //Fetch Recent Activities
   const fetchActivities = async () => {
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/activities/employee/${employeeId}`);
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/activities/employee/${employeeId}`);
       const data = await res.json();
       setActivities(Array.isArray(data) ? data : []);
     } catch {

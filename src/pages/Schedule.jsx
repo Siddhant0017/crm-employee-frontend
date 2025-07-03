@@ -13,7 +13,7 @@ const Schedule = () => {
 
   const fetchScheduledLeads = async () => {
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/leads/employee/${employeeId}`);
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/leads/employee/${employeeId}`);
       const data = await res.json();
       const scheduledLeads = data.filter(
         (lead) => lead.scheduledDate && lead.status !== 'closed'
