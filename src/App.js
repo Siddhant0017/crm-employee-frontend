@@ -17,13 +17,15 @@ function App() {
   const hasInitialized = useRef(false);
 
   useEffect(() => {
-    if (!employeeId) return;
-
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  
+    if (!employeeId || !isLoggedIn) return;
+  
     if (!hasInitialized.current) {
       tabOpen(employeeId);
       hasInitialized.current = true;
     }
-
+  
     const sendHeartbeat = () => {
       fetch(`${API_BASE}/api/attendance/heartbeat`, {
         method: 'POST',
@@ -31,20 +33,18 @@ function App() {
         body: JSON.stringify({ employeeId }),
       });
     };
-
+  
     sendHeartbeat();
-
-    const heartbeatInterval = setInterval(() => {
-      sendHeartbeat();
-    }, 60000); // every 60 seconds
-
+  
+    const heartbeatInterval = setInterval(sendHeartbeat, 60000);
+  
     const handleClose = () => {
       tabClose(employeeId);
     };
-
+  
     window.addEventListener('beforeunload', handleClose);
     window.addEventListener('pagehide', handleClose);
-
+  
     return () => {
       clearInterval(heartbeatInterval);
       handleClose();
@@ -52,6 +52,7 @@ function App() {
       window.removeEventListener('pagehide', handleClose);
     };
   }, [employeeId]);
+  
 
   return (
     <Router>
