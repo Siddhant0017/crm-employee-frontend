@@ -66,13 +66,13 @@ const CsvUploadModal = ({ onClose, onUploadSuccess }) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/leads/upload-csv',
+        `${process.env.REACT_APP_API_BASE_URL}/leads/upload-csv`,
         formData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },
         }
       );
-
+      
       console.log('Upload Success:', response.data);
       onUploadSuccess(response.data);
       onClose();
