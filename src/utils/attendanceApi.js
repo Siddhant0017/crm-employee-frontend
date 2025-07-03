@@ -4,7 +4,7 @@ const API_URL = `${process.env.REACT_APP_API_BASE_URL}/api/attendance`;
 export const tabOpen = async (employeeId) => {
   if (!employeeId) return;
   try {
-    await fetch(`${API_URL}/api/tab-open`, {
+    await fetch(`${API_URL}/tab-open`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ employeeId }),
@@ -22,7 +22,7 @@ export const tabClose = (employeeId) => {
     const blob = new Blob([JSON.stringify({ employeeId })], {
       type: 'application/json',
     });
-    navigator.sendBeacon(`${API_URL}/api/tab-close`, blob);
+    navigator.sendBeacon(`${API_URL}/tab-close`, blob); // fixed
     console.log('Tab Closed');
   } catch (err) {
     console.error('Tab Close Error:', err);
@@ -33,7 +33,7 @@ export const tabClose = (employeeId) => {
 export const heartbeat = async (employeeId) => {
   if (!employeeId) return;
   try {
-    await fetch(`${API_URL}/api/heartbeat`, {
+    await fetch(`${API_URL}/heartbeat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ employeeId }),
