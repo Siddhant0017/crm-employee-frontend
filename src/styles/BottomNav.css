@@ -1,0 +1,57 @@
+/* Bottom Navigation Bar */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 393px;
+  height: 90px;
+  background: #f8f8f8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
+}
+
+
+
+/* Each Nav Item */
+.nav-item {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* For Image Icons */
+.nav-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0) invert(30%);
+  transition: filter 0.3s ease;
+}
+
+/* Active Image to Blue */
+.nav-img.active {
+  filter: brightness(0) saturate(100%) invert(31%) sepia(98%) saturate(586%) hue-rotate(202deg) brightness(96%) contrast(92%);
+}
+
+/* Active Text */
+.nav-item.active {
+  color: #2051e5;
+  font-weight: 600;
+}
+
+/* For Home Icon from Lucide */
+.nav-icon {
+  width: 24px;
+  height: 24px;
+}
