@@ -59,6 +59,7 @@ const CsvUploadModal = ({ onClose, onUploadSuccess }) => {
 
   const handleUpload = async () => {
     if (!file) return;
+    console.log('Environment variable:', process.env.REACT_APP_API_BASE_URL);
 
     setIsLoading(true);
     const formData = new FormData();

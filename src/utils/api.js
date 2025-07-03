@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Use the base URL from environment variables
-const API_URL = process.env.REACT_APP_API_BASE_URL;
+const API_URL = process.env.REACT_APP_API_BASE_URL || 'https://sales-crm-backend-yepj.onrender.com/api';
 
 // Fetch all leads
 export const fetchLeads = async () => {
