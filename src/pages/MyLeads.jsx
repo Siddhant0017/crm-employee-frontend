@@ -68,7 +68,7 @@ const MyLeads = () => {
   const updateLead = async (id, updateData) => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/api/leads/${id}/status`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/leads/status/${id}`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
