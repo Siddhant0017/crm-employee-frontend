@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Dashboard.css';
 import { format, toZonedTime } from 'date-fns-tz';
+import { tabOpen } from '../utils/attendanceApi';
+
 
 const Dashboard = () => {
   const employee = JSON.parse(localStorage.getItem('employee'));
