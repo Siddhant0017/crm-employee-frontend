@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Dashboard.css';
 import { format, toZonedTime } from 'date-fns-tz';
-import { tabOpen } from '../utils/attendanceApi';
 
 
 const Dashboard = () => {
   const employee = JSON.parse(localStorage.getItem('employee'));
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  useEffect(() => {
-    if (isLoggedIn && employee?._id) {
-      tabOpen(employee._id); // only if logged in
-    }
-  }, []);
   const employeeId = employee?._id;
 
   const [attendanceLogs, setAttendanceLogs] = useState([]);
