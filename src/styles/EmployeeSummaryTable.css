@@ -1,0 +1,29 @@
+.employee-summary {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.employee-summary h3 {
+  margin-bottom: 15px;
+}
+
+.employee-summary table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-summary th, .employee-summary td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.employee-summary th {
+  background-color: #f4f4f4;
+}
+
+.employee-summary tr:hover {
+  background-color: #f9f9f9;
+}

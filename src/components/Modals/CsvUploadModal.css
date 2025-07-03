@@ -1,0 +1,241 @@
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 9999;
+}
+
+/* Modal Container */
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.modal-header h2 {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.modal-header p {
+  color: #6d6d6d;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Close Button */
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: #858585;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  color: #000000;
+}
+
+/* Drop Zone */
+.drop-zone {
+  border: 2px dashed #cecece;
+  border-radius: 12px;
+  padding: 48px;
+  text-align: center;
+  background-color: #fff;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.drop-zone.dragging {
+  border-color: #292929;
+  background-color: rgba(239, 239, 239, 0.5);
+}
+
+.upload-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.upload-icon-box {
+  width: 64px;
+  height: 48px;
+  background-color: #00181b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.upload-icon-text {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.upload-icon-remove-btn {
+  position: absolute;
+  top: 245px;
+  right: -220px;
+  width: 24px;
+  height: 24px;
+  background-color: #858585;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.upload-icon-remove-btn:hover {
+  background-color: #292929;
+}
+
+.drop-zone p {
+  color: #292929;
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.or-text {
+  color: #6d6d6d;
+  margin: 8px 0 16px;
+  font-size: 14px;
+}
+
+/* Browse Button */
+.browse-btn {
+  padding: 8px 32px;
+  border: 1px solid #cecece;
+  color: #292929;
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.browse-btn:hover {
+  background-color: #efefef;
+}
+
+/* Uploaded File Box */
+.uploaded-file {
+  background-color: #efefef;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.uploaded-file-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uploaded-file-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #292929;
+  color: #ffffff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.uploaded-file-name {
+  color: #000000;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.uploaded-file-size {
+  color: #6d6d6d;
+  font-size: 13px;
+}
+
+/* Remove File Button */
+.remove-file-btn {
+  background: none;
+  border: none;
+  color: #858585;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.remove-file-btn:hover {
+  color: #000000;
+}
+
+.csv-upload-btn {
+  padding: 8px 24px;
+  background-color: #00181b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.csv-upload-btn:hover:enabled {
+  background-color: #292929;
+}
+
+.csv-upload-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.csv-cancel-btn {
+  padding: 8px 24px;
+  border: 1px solid #cecece;
+  color: #6d6d6d;
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.csv-cancel-btn:hover {
+  background-color: #efefef;
+}
+
+.csv-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Hidden Input */
+input[type="file"] {
+  display: none;
+}

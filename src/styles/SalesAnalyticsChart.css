@@ -1,0 +1,27 @@
+.sales-analytics-chart {
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #B1B1B1;
+  width: 813px;
+  height: 280px;
+  left: 310px;
+  top: 365px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sales-chart-title {
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #616161;
+  font-weight: 600;
+}
+.chart-container {
+  flex: 1;
+  width: 100%;
+}

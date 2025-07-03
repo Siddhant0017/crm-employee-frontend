@@ -1,0 +1,92 @@
+/* Page container */
+.leads-page-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 24px;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+/* Upload Button */
+.add-leads-button {
+  background-color: #b1b1b1;
+  position: absolute;
+  width: 190px;
+  height: 50px;
+  left: 1420px;
+  top: 124px;
+  color: #000;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.add-leads-button:hover {
+  background-color: #979797;
+}
+
+/* Table */
+.leads-table {
+  border: 1px solid #b1b1b1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #f0f0f0;
+  padding: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid #b1b1b1;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 16px;
+  border-bottom: 1px solid #ececec;
+  transition: background-color 0.2s;
+}
+
+.table-row:hover {
+  background-color: #fafafa;
+}
+
+/* No Data */
+.no-data {
+  padding: 24px;
+  text-align: center;
+  color: #999;
+}
+.breadcrumb {
+  font-size: 14px;
+  color: #636060;
+}
+
+.breadcrumb-divider {
+  margin: 0 8px;
+  color: #979797;
+}

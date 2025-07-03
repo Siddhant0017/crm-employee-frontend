@@ -1,0 +1,117 @@
+.settings-page {
+  padding: 32px 32px 0 310px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.settings-container {
+  width: 1094px;
+  background: white;
+  border: 1px solid #B1B1B1;
+  border-radius: 16px;
+  padding: 32px;
+  box-sizing: border-box;
+  margin-top: -40px;
+  margin-left: -290px;
+}
+
+.settings-container h2 {
+  color: #333;
+  margin-bottom: 32px;
+  font-size: 24px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 16px;
+}
+
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #B1B1B1;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.action-btn {
+  padding: 12px 24px;
+  border-radius: 4px;
+  width: 190px;
+  height: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.action-btn.edit {
+  background-color: #B1B1B1;
+  color: black;
+}
+
+.action-btn.save {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancel-btn {
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: white;
+  border: 1px solid #ddd;
+  color: #666;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.action-btn.edit:hover {
+  background-color: #979797;
+}
+
+.action-btn.save:hover {
+  background-color: #218838;
+}
+
+.cancel-btn:hover {
+  background-color: #f5f5f5;
+}

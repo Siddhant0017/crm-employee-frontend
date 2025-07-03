@@ -1,0 +1,37 @@
+/* Breadcrumb Container */
+.breadcrumb {
+    position: absolute;
+    left: 312.99px;
+    top: 126px;
+    width: fit-content;
+    height: 40px;
+  
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  /* Breadcrumb Link (like Home) */
+  .breadcrumb .link {
+    text-decoration: none;
+    color: #667085;
+    font-size: 16px;
+    font-family: 'REM', sans-serif;
+    font-weight: 400;
+  }
+  
+  /* Current Active Page (like Dashboard, Leads) */
+  .breadcrumb .active {
+    color: #344054;
+    font-size: 16px;
+    font-family: 'REM', sans-serif;
+    font-weight: 500;
+  }
+  
+  /* Separator Arrow */
+  .breadcrumb .separator {
+    color: #667085;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  

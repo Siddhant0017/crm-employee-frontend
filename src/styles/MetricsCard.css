@@ -1,0 +1,53 @@
+.metrics-card {
+  box-sizing: border-box;
+  position: relative;
+  width: 250px;
+  height: 140px;
+  background-color: #ffffff;
+  border: 1px solid #B1B1B1;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+  margin-left: 25px;
+}
+
+.metrics-card:hover {
+  transform: translateY(-2px);
+}
+
+.metrics-icon {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 12px;
+  top: 45px;
+}
+
+.metrics-content {
+  flex: 1;
+}
+
+.metrics-content h3 {
+  margin: 30px;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1px;
+}
+
+.metrics-value {
+  margin: 5%;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-left:30px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}

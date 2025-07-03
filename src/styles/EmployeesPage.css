@@ -1,0 +1,193 @@
+/* Main Page */
+.employees-page {
+  padding: 20px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-employee-btn {
+  background-color: #B1B1B1;
+  color: black;
+  position: absolute;
+  width: 190px;
+  height: 50px;
+  left: 1420px;
+  top: 124px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.add-employee-btn:hover {
+  background-color: #979797;
+}
+
+/* Employee Table */
+.employees-table {
+  width: 1380px;
+  background: white;
+  border: 1px solid #B1B1B1;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: -40px;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.employee-table th,
+.employee-table td {
+  padding: 12px 16px;
+  text-align: left;
+  color: #344054;
+  font-size: 14px;
+}
+
+.employee-table th {
+  background-color: #f9fafb;
+  color: #667085;
+  font-weight: 500;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.employee-table tr:not(:last-child) {
+  border-bottom: 1px solid #eaecf0;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+}
+
+/* Employee Info */
+.emp-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #b0c4de;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.email {
+  color: #667085;
+  font-size: 12px;
+}
+
+/* Status */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status.active {
+  background-color: #ecfdf3;
+  color: #027a48;
+}
+
+.status.inactive {
+  background-color: #fef3f2;
+  color: #b42318;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.pagination-button.active {
+  background-color: #B1B1B1;
+  color: white;
+}
+
+.pagination-button.ellipsis {
+  cursor: default;
+  background: transparent;
+  border: none;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Action Dropdown */
+.actions-cell {
+  position: relative;
+}
+
+.actions-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.actions-dropdown {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  right: 0;
+  z-index: 10;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.actions-dropdown button {
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.actions-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+.action-icon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  top: 4px;
+  left: -4px;
+  background: #ffffff;
+  border-radius: 3px;
+}
