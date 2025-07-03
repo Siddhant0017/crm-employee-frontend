@@ -32,19 +32,14 @@ const LoginPage = () => {
         location: data.employee.location,
         language: data.employee.language,
       };
-
-      // ✅ Store both employee and login flag
+      localStorage.clear();
       localStorage.setItem('employee', JSON.stringify(employeeData));
       localStorage.setItem('isLoggedIn', 'true');
-
-      // ✅ Check-In API Trigger
       await fetch(`${API_BASE}/api/attendance/check-in`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ employeeId: data.employee.id }),
       });
-
-      // ✅ Redirect after successful login
       navigate('/dashboard');
     } catch (err) {
       console.error('Login error:', err);

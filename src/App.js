@@ -11,21 +11,22 @@ import { tabOpen, tabClose } from './utils/attendanceApi';
 const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
 
 function App() {
-  const employee = JSON.parse(localStorage.getItem('employee'));
-  const employeeId = employee?._id;
-
   const hasInitialized = useRef(false);
 
   useEffect(() => {
+    const storedEmployee = JSON.parse(localStorage.getItem('employee'));
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  
-    if (!employeeId || !isLoggedIn) return;
-  
+    if (!storedEmployee?._id || !isLoggedIn) return;
+
+    const employeeId = storedEmployee._id;
+
+    // Only fire tabOpen once when component mounts
     if (!hasInitialized.current) {
       tabOpen(employeeId);
       hasInitialized.current = true;
     }
-  
+
+    // Heartbeat every 60s
     const sendHeartbeat = () => {
       fetch(`${API_BASE}/api/attendance/heartbeat`, {
         method: 'POST',
@@ -33,26 +34,41 @@ function App() {
         body: JSON.stringify({ employeeId }),
       });
     };
-  
-    sendHeartbeat();
-  
+
+    sendHeartbeat(); // initial
     const heartbeatInterval = setInterval(sendHeartbeat, 60000);
-  
+
+    // Close tab handler (sendBeacon)
     const handleClose = () => {
       tabClose(employeeId);
     };
-  
+
+    // Visibility change (to track switching away or back)
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        tabClose(employeeId);
+      } else if (document.visibilityState === 'visible') {
+        tabOpen(employeeId);
+      }
+    };
+
+    // Event listeners
     window.addEventListener('beforeunload', handleClose);
     window.addEventListener('pagehide', handleClose);
-  
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Cleanup
     return () => {
       clearInterval(heartbeatInterval);
       handleClose();
       window.removeEventListener('beforeunload', handleClose);
       window.removeEventListener('pagehide', handleClose);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, [employeeId]);
-  
+  }, []);
+
+  const employee = JSON.parse(localStorage.getItem('employee'));
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
   return (
     <Router>
@@ -62,7 +78,7 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            employee ? (
+            isLoggedIn && employee ? (
               <Layout>
                 <Dashboard />
               </Layout>
@@ -74,7 +90,7 @@ function App() {
         <Route
           path="/leads"
           element={
-            employee ? (
+            isLoggedIn && employee ? (
               <Layout>
                 <MyLeads />
               </Layout>
@@ -86,7 +102,7 @@ function App() {
         <Route
           path="/schedule"
           element={
-            employee ? (
+            isLoggedIn && employee ? (
               <Layout>
                 <Schedule />
               </Layout>
@@ -98,7 +114,7 @@ function App() {
         <Route
           path="/profile"
           element={
-            employee ? (
+            isLoggedIn && employee ? (
               <Layout>
                 <Profile />
               </Layout>
